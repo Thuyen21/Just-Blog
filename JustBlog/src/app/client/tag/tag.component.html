@@ -1,0 +1,36 @@
+<div class="card mb-4">
+    <div class="card-header">
+      <i class="fas fa-table me-1"></i>
+      Tag Table
+    </div>
+    <div class="card-body">
+      <table id="datatablesSimple">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>UrlSlug</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>UrlSlug</th>
+          </tr>
+        </tfoot>
+        <tbody *ngFor="let tag of tags">
+          <tr>
+            <td>{{ tag.id }}</td>
+            <td>{{ tag.name }}</td>
+            <td>{{ tag.description }}</td>
+            <td>{{ tag.urlSlug }}</td>
+          
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

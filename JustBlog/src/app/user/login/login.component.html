@@ -1,0 +1,70 @@
+<div class="card-header">
+  <h3 class="text-center font-weight-light my-4">Login</h3>
+</div>
+<div class="card-body">
+  <form #loginForm="ngForm" appIdentityRevealed (ngSubmit)="login(loginForm)">
+    <div class="form-floating mb-3">
+      <input
+        class="form-control"
+        type="email"
+        placeholder="name@example.com"
+        name="userName"
+        [(ngModel)]="userName"
+        #username="ngModel"
+        required
+        email
+      />
+      <label for="inputEmail">Email address</label>
+    </div>
+    <div *ngIf="username.errors?.['required']" class="alert alert-danger">
+      Email is required.
+    </div>
+    <div *ngIf="username.errors?.['email']" class="alert alert-danger">
+      Not is a email
+    </div>
+    <div class="form-floating mb-3">
+      <input
+        class="form-control"
+        type="password"
+        placeholder="Password"
+        name="password"
+        [(ngModel)]="password"
+        #passwords="ngModel"
+        required
+        minlength="6"
+      />
+      <label for="inputPassword">Password</label>
+    </div>
+    <div *ngIf="passwords.errors?.['required']" class="alert alert-danger">
+      Passwords is required.
+    </div>
+    <div *ngIf="passwords.errors?.['minlength']" class="alert alert-danger">
+      Passwords is invalid.
+    </div>
+
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        id="inputRememberPassword"
+        type="checkbox"
+        value=""
+      />
+      <label class="form-check-label" for="inputRememberPassword"
+        >Remember Password</label
+      >
+    </div>
+    <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+      <a class="small" href="user/password">Forgot Password?</a>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        [disabled]="loginForm.invalid"
+      >
+        Login
+      </button>
+    </div>
+  </form>
+</div>
+<div class="card-footer text-center py-3">
+  <div class="small"><a href="user/register">Need an account? Sign up!</a></div>
+</div>

@@ -1,0 +1,44 @@
+<form #tagForm="ngForm" appIdentityRevealed (ngSubmit)="create(tagForm)">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input
+      type="text"
+      class="form-control"
+      name="name"
+      id="name"
+      [(ngModel)]="name"
+      #Name="ngModel"
+      required
+      aria-describedby="emailHelp"
+    />
+    <div *ngIf="Name.errors?.['required']" class="form-text">
+      Name is required
+    </div>
+  </div>
+  <div class="mb-3">
+    <label for="urlSlug" class="form-label">Url Slug</label>
+    <input
+      type="text"
+      name="urlSlug"
+      class="form-control"
+      id="urlSlug"
+      [(ngModel)]="urlSlug"
+      #UrlSlug="ngModel"
+      required
+    />
+  </div>
+
+  <div class="mb-3">
+    <label for="description" class="form-label">Description</label>
+    <textarea
+      class="form-control"
+      name="description"
+      id="description"
+      rows="3"
+      [(ngModel)]="description"
+      #Description="ngModel"
+      required
+    ></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

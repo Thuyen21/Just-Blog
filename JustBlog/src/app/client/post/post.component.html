@@ -1,0 +1,51 @@
+<div class="card mb-4">
+  <div class="card-header">
+    <i class="fas fa-table me-1"></i>
+   Post table
+  </div>
+  <div class="card-body">
+    <table id="datatablesSimple">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Short Description</th>
+          <th>Content</th>
+          <th>PostedOn</th>
+          <th>Category</th>
+          <th>Tag</th>
+          <th>Rate</th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th>Id</th>
+          <th>Title</th>
+          <th>Short Description</th>
+          <th>Content</th>
+          <th>PostedOn</th>
+          <th>Category</th>
+          <th>Tag</th>
+          <th>Rate</th>
+        </tr>
+      </tfoot>
+      <tbody *ngFor="let post of posts">
+        <tr>
+          <td>{{ post.id }}</td>
+          <td>{{ post.title }}</td>
+          <td>{{ post.shortDescription }}</td>
+          <td>{{ post.content }}</td>
+          <td>{{ post.postedOn }}</td>
+          <td>{{ post.categoryName }}</td>
+          <td>
+            <div *ngFor="let tag of post.tags">
+              <span>{{ tag }}</span>
+            </div>
+          </td>
+
+          <td>{{ post.rate }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

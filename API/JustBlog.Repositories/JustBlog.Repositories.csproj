@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Mapster" Version="7.4.0-pre03" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JustBlog.Commons\JustBlog.Commons.csproj" />
+    <ProjectReference Include="..\JustBlog.Entities\JustBlog.Entities.csproj" />
+  </ItemGroup>
+
+</Project>
